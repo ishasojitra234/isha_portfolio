@@ -40,11 +40,11 @@ export default function ContactPage() {
               <a href="https://www.linkedin.com/in/isha-sojitra-76a946341" target="_blank" rel="noreferrer"><span>LinkedIn</span><strong>Connect with Isha <ArrowUpRight size={13} /></strong></a>
               <a href="tel:+919016186445"><span>Based in</span><strong>Surat, India <MapPin size={13} /></strong></a>
             </div>
-            <div className="contact-availability">
+            {/* <div className="contact-availability">
               <span><Mail size={14} /> ishasojitra234@gmail.com</span>
               <span><Phone size={14} /> +91 90161 86445</span>
               <span><Code2 size={14} /> Odoo · Python · integrations</span>
-            </div>
+            </div> */}
           </PageReveal>
           <PageReveal className="contact-form-wrap" delay={0.1}>
             <ContactForm />

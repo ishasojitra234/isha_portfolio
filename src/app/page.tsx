@@ -95,9 +95,9 @@ export default function Home() {
               </a>
             </div>
             <div className="hero-meta">
-              <span><MapPin size={14} /> Surat, India</span>
+              {/* <span><MapPin size={14} /> Surat, India</span> */}
               <span className="meta-divider" />
-              <span className="available"><i /> Available for remote or on-site work; open to relocating anywhere</span>
+              <span className="available"><i /> Available for remote or on-site work and open to relocating anywhere</span>
             </div>
           </div>
           <PageReveal className="hero-art-wrap" delay={0.12}>
@@ -110,7 +110,7 @@ export default function Home() {
             <div className="tech-marquee-track">
               {[0, 1].map((copy) => (
                 <ul className="tech-chip-list" key={copy} aria-hidden={copy === 1}>
-                  <li className="tech-strip-label">Tools I work with</li>
+                  {/* <li className="tech-strip-label">Tools I work with</li> */}
                   {technologies.map(({ name, icon }) => (
                     <li className="tech-chip" key={name}>
                       {icon ? (
@@ -160,7 +160,7 @@ export default function Home() {
               <PageReveal className="home-stat"><strong>2+</strong><span>years in software and Odoo work</span></PageReveal>
               <PageReveal className="home-stat" delay={0.05}><strong>{projects.length}</strong><span>project case studies</span></PageReveal>
               <PageReveal className="home-stat" delay={0.1}><strong>14 – 19</strong><span>Odoo versions in project work</span></PageReveal>
-              <PageReveal className="home-stat" delay={0.15}><strong>{skills.length}</strong><span>areas of technical focus</span></PageReveal>
+              {/* <PageReveal className="home-stat" delay={0.15}><strong>{skills.length}</strong><span>areas of technical focus</span></PageReveal> */}
             </div>
             <Link className="home-proof-link" href="/journey">Explore my experience <ArrowUpRight size={13} /></Link>
           </div>
@@ -242,7 +242,7 @@ export default function Home() {
 
         <section className="home-contact-cta section-wrap">
           <div>
-            <div className="eyebrow"><span className="eyebrow-line" /> HAVE A PROJECT IN MIND?</div>
+            <div className="eyebrow"><span className="eyebrow-line" /> ANY PROJECT IN MIND?</div>
             <h2>Let&apos;s shape the next<br /><span>useful version.</span></h2>
             <p>Tell me what you are trying to build or improve. We can begin with the current process and find a clear next step.</p>
           </div>

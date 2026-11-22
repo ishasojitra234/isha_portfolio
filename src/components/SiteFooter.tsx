@@ -2,13 +2,6 @@ import { ArrowUpRight, Mail } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
-const footerLinks = [
-  ["Services", "/services"],
-  ["Projects", "/work"],
-  ["Expertise", "/expertise"],
-  ["Journey", "/journey"],
-] as const;
-
 export default function SiteFooter() {
   return (
     <footer className="site-footer site-footer-expanded">
@@ -22,17 +15,25 @@ export default function SiteFooter() {
           <span className="footer-location">India · Available for remote work</span>
         </div>
         <div className="footer-nav">
-          <span className="footer-label">EXPLORE</span>
-          {footerLinks.map(([label, href]) => <Link href={href} key={href}>{label}</Link>)}
-          <Link href="/contact">Contact</Link>
+          <div className="footer-nav-group">
+            <span className="footer-label">SERVICES</span>
+            <Link href="/services">Odoo development</Link>
+            <Link href="/services">Website development</Link>
+          </div>
+          <div className="footer-nav-group">
+            <span className="footer-label">CONNECT</span>
+            <a href="https://www.linkedin.com/in/isha-sojitra-76a946341" target="_blank" rel="noreferrer">
+              LinkedIn <ArrowUpRight size={14} />
+            </a>
+          </div>
         </div>
-        <Link className="footer-contact-card" href="/contact">
-          <span>Have an Odoo project in mind?</span>
-          <strong>Let&apos;s discuss it <ArrowUpRight size={14} /></strong>
-        </Link>
+          <Link className="footer-contact-card" href="/contact">
+            <span>Any project in mind?</span>
+            <strong>Let&apos;s discuss it <ArrowUpRight size={14} /></strong>
+          </Link>
       </div>
       <div className="footer-bottom">
-        <span>© 2026 Isha Sojitra</span>
+        <span>© Isha Sojitra</span>
         <span>Thoughtful software, built around the work.</span>
         <a href="mailto:ishasojitra234@gmail.com"><Mail size={12} /> Email me</a>
       </div>
