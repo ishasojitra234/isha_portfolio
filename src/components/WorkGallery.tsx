@@ -5,7 +5,7 @@ import Link from "next/link";
 import { useState } from "react";
 import PageReveal from "./PageReveal";
 import ProjectArtwork from "./ProjectArtwork";
-import { projects } from "../data/projects";
+import { orderedProjects, projects } from "../data/projects";
 
 const filters = [
   { label: "All projects", value: "all" },
@@ -18,7 +18,9 @@ type ProjectFilter = (typeof filters)[number]["value"];
 
 export default function WorkGallery() {
   const [filter, setFilter] = useState<ProjectFilter>("all");
-  const visibleProjects = filter === "all" ? projects : projects.filter((project) => project.group === filter);
+  const visibleProjects = filter === "all"
+    ? orderedProjects
+    : orderedProjects.filter((project) => project.group === filter);
 
   return (
     <>
@@ -43,7 +45,7 @@ export default function WorkGallery() {
       </div>
       <div className="project-list" aria-live="polite">
         {visibleProjects.map((project, index) => {
-          const number = (projects.indexOf(project) + 1).toString().padStart(2, "0");
+          const number = (orderedProjects.indexOf(project) + 1).toString().padStart(2, "0");
 
           return (
             <PageReveal key={project.slug} delay={(index % 3) * 0.06}>

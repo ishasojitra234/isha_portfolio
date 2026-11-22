@@ -1,7 +1,7 @@
 export const skills = [
   {
     title: "Odoo & ERP",
-    items: ["Odoo 16 / 17", "Custom modules", "Business workflows", "Migrations"],
+    items: ["Odoo 14 / 19", "Custom modules", "Business workflows", "Migrations"],
   },
   {
     title: "Backend engineering",

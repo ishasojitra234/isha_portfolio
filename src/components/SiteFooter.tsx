@@ -19,7 +19,7 @@ export default function SiteFooter() {
             <span>ISHA SOJITRA</span>
           </Link>
           <p>Odoo engineering for more connected, dependable business workflows.</p>
-          <span className="footer-location">Surat, India · Open to meaningful opportunities</span>
+          <span className="footer-location">India · Available for remote work</span>
         </div>
         <div className="footer-nav">
           <span className="footer-label">EXPLORE</span>

@@ -10,18 +10,27 @@ import {
 } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import {
+  siJavascript,
+  siNextdotjs,
+  siOdoo,
+  siPostgresql,
+  siPython,
+  siTypescript,
+  siXml,
+} from "simple-icons";
 import PageReveal from "../components/PageReveal";
 import ProjectArtwork from "../components/ProjectArtwork";
 import SiteFooter from "../components/SiteFooter";
 import SiteHeader from "../components/SiteHeader";
-import { projects } from "../data/projects";
+import { orderedProjects, projects } from "../data/projects";
 import { experience, skills } from "../data/profile";
 import { services } from "../data/services";
 
 export const metadata: Metadata = {
-  title: "Isha Sojitra | Software Engineer & Odoo Developer",
+  title: "Isha Sojitra | Software Engineer & Odoo Full-Stack Developer",
   description:
-    "Isha Sojitra is a software engineer and Odoo backend developer building custom ERP workflows, web experiences, and integrations.",
+    "Isha Sojitra is a software engineer and Odoo full-stack developer building custom ERP workflows, web experiences, and integrations.",
 };
 
 const approach = [
@@ -31,7 +40,18 @@ const approach = [
   "Refine the result with practical feedback and support.",
 ];
 
-const featuredProjects = projects.slice(0, 6);
+const featuredProjects = orderedProjects.slice(0, 6);
+
+const technologies = [
+  { name: "Odoo", icon: siOdoo },
+  { name: "Python", icon: siPython },
+  { name: "PostgreSQL", icon: siPostgresql },
+  { name: "JavaScript", icon: siJavascript },
+  { name: "TypeScript", icon: siTypescript },
+  { name: "Next.js", icon: siNextdotjs },
+  { name: "XML / QWeb", icon: siXml },
+  { name: "REST APIs", icon: null },
+];
 
 function HeroArtwork() {
   return (
@@ -64,7 +84,7 @@ export default function Home() {
               <span>for real work.</span>
             </h1>
             <p className="hero-intro">
-              I&apos;m Isha, a software engineer and Odoo backend developer. I turn business
+              I&apos;m Isha, a software engineer and Odoo full-stack developer. I turn business
               processes into custom ERP tools, useful integrations, and maintainable solutions.
             </p>
             <div className="hero-actions">
@@ -77,7 +97,7 @@ export default function Home() {
             <div className="hero-meta">
               <span><MapPin size={14} /> Surat, India</span>
               <span className="meta-divider" />
-              <span className="available"><i /> Open to meaningful opportunities</span>
+              <span className="available"><i /> Available for remote or on-site work; open to relocating anywhere</span>
             </div>
           </div>
           <PageReveal className="hero-art-wrap" delay={0.12}>
@@ -85,15 +105,29 @@ export default function Home() {
           </PageReveal>
         </section>
 
-        <div className="ticker" aria-label="Technology and specialties">
-          <div className="ticker-track">
-            {[0, 1].map((copy) => (
-              <div className="ticker-group" key={copy} aria-hidden={copy === 1}>
-                <span>ODOO</span><i>✳</i><span>PYTHON</span><i>✳</i><span>POSTGRESQL</span><i>✳</i><span>ERP INTEGRATIONS</span><i>✳</i><span>BUSINESS AUTOMATION</span><i>✳</i>
-              </div>
-            ))}
+        <section className="tech-strip" aria-label="Tools and technologies">
+          <div className="tech-marquee">
+            <div className="tech-marquee-track">
+              {[0, 1].map((copy) => (
+                <ul className="tech-chip-list" key={copy} aria-hidden={copy === 1}>
+                  <li className="tech-strip-label">Tools I work with</li>
+                  {technologies.map(({ name, icon }) => (
+                    <li className="tech-chip" key={name}>
+                      {icon ? (
+                        <svg aria-hidden="true" viewBox="0 0 24 24" fill={`#${icon.hex}`}>
+                          <path d={icon.path} />
+                        </svg>
+                      ) : (
+                        <span className="tech-api-icon" aria-hidden="true">API</span>
+                      )}
+                      <span>{name}</span>
+                    </li>
+                  ))}
+                </ul>
+              ))}
+            </div>
           </div>
-        </div>
+        </section>
 
         <section className="home-services section-wrap">
           <PageReveal className="home-section-heading">
@@ -125,7 +159,7 @@ export default function Home() {
             <div className="home-stat-grid">
               <PageReveal className="home-stat"><strong>2+</strong><span>years in software and Odoo work</span></PageReveal>
               <PageReveal className="home-stat" delay={0.05}><strong>{projects.length}</strong><span>project case studies</span></PageReveal>
-              <PageReveal className="home-stat" delay={0.1}><strong>17–19</strong><span>Odoo versions in project work</span></PageReveal>
+              <PageReveal className="home-stat" delay={0.1}><strong>14 – 19</strong><span>Odoo versions in project work</span></PageReveal>
               <PageReveal className="home-stat" delay={0.15}><strong>{skills.length}</strong><span>areas of technical focus</span></PageReveal>
             </div>
             <Link className="home-proof-link" href="/journey">Explore my experience <ArrowUpRight size={13} /></Link>

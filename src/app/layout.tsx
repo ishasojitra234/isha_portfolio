@@ -4,21 +4,21 @@ import "./globals.css";
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000";
 
 export const metadata: Metadata = {
-  title: "Isha Sojitra | Odoo Backend Developer",
+  title: "Isha Sojitra | Odoo Full-Stack Developer",
   description:
-    "Isha Sojitra is an Odoo backend developer building thoughtful ERP solutions, custom modules, and integrations.",
+    "Isha Sojitra is an Odoo full-stack developer building thoughtful ERP solutions, custom modules, and integrations.",
   metadataBase: new URL(siteUrl),
   openGraph: {
-    title: "Isha Sojitra | Odoo Backend Developer",
+    title: "Isha Sojitra | Odoo Full-Stack Developer",
     description:
-      "Odoo backend developer focused on scalable ERP solutions and practical integrations.",
+      "Odoo full-stack developer focused on scalable ERP solutions and practical integrations.",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Isha Sojitra | Odoo Backend Developer",
+    title: "Isha Sojitra | Odoo Full-Stack Developer",
     description:
-      "Odoo backend developer focused on scalable ERP solutions and practical integrations.",
+      "Odoo full-stack developer focused on scalable ERP solutions and practical integrations.",
   },
 };
 

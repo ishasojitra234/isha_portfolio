@@ -42,7 +42,7 @@ export default function OpenGraphImage() {
           </div>
         </div>
         <div style={{ display: "flex", fontSize: 22, color: "#e9d8d6" }}>
-          Python · Odoo · Integrations · Surat, India
+          Python · Odoo · Integrations · PostgreSQL · REST APIs
         </div>
       </div>
     ),

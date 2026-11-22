@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import ProjectDetails from "./ProjectDetails";
-import { projects } from "../../../data/projects";
+import { orderedProjects, projects } from "../../../data/projects";
 
 type ProjectPageProps = {
   params: Promise<{ slug: string }>;
@@ -29,7 +29,7 @@ export async function generateMetadata({ params }: ProjectPageProps): Promise<Me
 
 export default async function ProjectPage({ params }: ProjectPageProps) {
   const { slug } = await params;
-  const projectIndex = projects.findIndex((item) => item.slug === slug);
+  const projectIndex = orderedProjects.findIndex((item) => item.slug === slug);
 
   if (projectIndex === -1) {
     notFound();
@@ -37,10 +37,10 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
 
   return (
     <ProjectDetails
-      project={projects[projectIndex]}
+      project={orderedProjects[projectIndex]}
       projectNumber={(projectIndex + 1).toString().padStart(2, "0")}
-      previousProject={projects[projectIndex - 1]}
-      nextProject={projects[projectIndex + 1]}
+      previousProject={orderedProjects[projectIndex - 1]}
+      nextProject={orderedProjects[projectIndex + 1]}
     />
   );
 }

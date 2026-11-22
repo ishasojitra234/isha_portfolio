@@ -1023,3 +1023,18 @@ export const projects: Project[] = [
     ],
   },
 ];
+
+const priorityProjectSlugs = [
+  "openeducat-enhancements",
+  "oil-distribution-erp",
+  "community-sabha-management",
+];
+
+const projectPriority = (slug: string) => {
+  const index = priorityProjectSlugs.indexOf(slug);
+  return index === -1 ? priorityProjectSlugs.length : index;
+};
+
+export const orderedProjects = [...projects].sort(
+  (left, right) => projectPriority(left.slug) - projectPriority(right.slug),
+);
