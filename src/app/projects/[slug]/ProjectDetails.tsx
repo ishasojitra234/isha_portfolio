@@ -7,10 +7,11 @@ import {
   Check,
   Layers3,
 } from "lucide-react";
-import { motion, MotionConfig, useReducedMotion } from "framer-motion";
-import Image from "next/image";
+import { motion, MotionConfig } from "framer-motion";
 import Link from "next/link";
 import ProjectArtwork from "../../../components/ProjectArtwork";
+import SiteFooter from "../../../components/SiteFooter";
+import SiteHeader from "../../../components/SiteHeader";
 import type { Project } from "../../../data/projects";
 
 function DetailReveal({
@@ -22,12 +23,10 @@ function DetailReveal({
   className?: string;
   delay?: number;
 }) {
-  const reduceMotion = useReducedMotion();
-
   return (
     <motion.div
-      className={className}
-      initial={reduceMotion ? false : { opacity: 0, y: 24 }}
+      className={`reveal${className ? ` ${className}` : ""}`}
+      initial={false}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.18 }}
       transition={{ duration: 0.65, delay, ease: [0.22, 1, 0.36, 1] }}
@@ -50,28 +49,16 @@ export default function ProjectDetails({
 }) {
   return (
     <MotionConfig reducedMotion="user">
+      <SiteHeader />
       <main className="project-detail-page">
-        <header className="detail-header">
-          <Link className="wordmark" href="/#home" aria-label="Isha Sojitra home">
-            <Image src="/isha-mark.png" alt="" width={30} height={30} />
-            <span>ISHA SOJITRA</span>
-          </Link>
-          <nav aria-label="Project navigation">
-            <Link href="/#work">All projects</Link>
-            <Link className="detail-nav-cta" href="/#contact">
-              Let&apos;s talk <ArrowUpRight size={14} />
-            </Link>
-          </nav>
-        </header>
-
         <section className="detail-hero section-wrap">
           <motion.div
             className="detail-hero-copy"
-            initial={{ opacity: 0, y: 24 }}
+            initial={false}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
           >
-            <Link className="detail-back-link" href="/#work">
+            <Link className="detail-back-link" href="/work">
               <ArrowLeft size={14} /> Back to all projects
             </Link>
             <div className="eyebrow">
@@ -85,7 +72,7 @@ export default function ProjectDetails({
             <h1>{project.title}</h1>
             <p className="detail-intro">{project.description}</p>
             <div className="detail-hero-actions">
-              <Link className="button button-dark" href="/#contact">
+              <Link className="button button-dark" href="/contact">
                 Discuss a similar project <ArrowUpRight size={15} />
               </Link>
               <span className="detail-work-label"><Layers3 size={14} /> Odoo project</span>
@@ -94,7 +81,7 @@ export default function ProjectDetails({
 
           <motion.div
             className="detail-hero-art"
-            initial={{ opacity: 0, scale: 0.96, y: 14 }}
+            initial={false}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.12, ease: [0.22, 1, 0.36, 1] }}
           >
@@ -184,7 +171,7 @@ export default function ProjectDetails({
               <div className="eyebrow"><span className="eyebrow-line" /> KEEP EXPLORING</div>
               <h2>More work, <span>more workflows.</span></h2>
             </div>
-            <Link className="detail-back-link" href="/#work">
+            <Link className="detail-back-link" href="/work">
               View all projects <ArrowRight size={14} />
             </Link>
           </DetailReveal>
@@ -204,15 +191,8 @@ export default function ProjectDetails({
           </div>
         </section>
 
-        <footer className="detail-footer">
-          <Link href="/#home" className="wordmark footer-wordmark">
-            <Image className="wordmark-icon" src="/isha-mark.png" alt="" width={25} height={25} />
-            <span>ISHA SOJITRA</span>
-          </Link>
-          <span>Odoo development · thoughtful business workflows</span>
-          <Link href="/#contact">Start a conversation <ArrowUpRight size={13} /></Link>
-        </footer>
       </main>
+      <SiteFooter />
     </MotionConfig>
   );
 }
