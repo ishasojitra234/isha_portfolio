@@ -91,7 +91,7 @@ export default function Home() {
               <Link className="button button-dark" href="/work">See selected work <ArrowDownRight size={16} /></Link>
               <Link className="text-link" href="/contact">Start a conversation <ArrowUpRight size={14} /></Link>
               <a className="text-link" href="/isha-sojitra-resume.pdf" download>
-                <Download size={15} /> Résumé
+                <Download size={15} /> Resume
               </a>
             </div>
             <div className="hero-meta">
