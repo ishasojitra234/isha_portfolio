@@ -8,9 +8,13 @@ export type ProjectModule = {
 export type Project = {
   slug: string;
   title: string;
+  role: string;
   category: string;
+  detailCategory?: string;
   group: "industry" | "operations" | "integrations";
   version: string;
+  edition: string;
+  technologies: string[];
   description: string;
   features: [string, string, string];
   visual: string;
@@ -18,6 +22,8 @@ export type Project = {
   artLabel: string;
   context: string;
   approach: string;
+  contributions: string[];
+  outcome: string;
   modules?: ProjectModule[];
   sourceNotes?: string[];
 };
@@ -26,9 +32,12 @@ export const projects: Project[] = [
   {
     slug: "oil-distribution-erp",
     title: "Oil distribution ERP",
+    role: "Odoo Developer – Customization & Enhancement",
     category: "Industry ERP",
     group: "industry",
     version: "Odoo 17",
+    edition: "Not specified",
+    technologies: ["Python", "XML / QWeb", "PostgreSQL"],
     description:
       "Customized oil-distribution workflows across CRM, sales, and accounting, including tailored invoice reports and sales-order handling.",
     features: ["CRM & sales", "Invoice reports", "Order sequences"],
@@ -39,13 +48,23 @@ export const projects: Project[] = [
       "The project brings customer relationships, sales orders, and accounting documents together for an oil distribution business.",
     approach:
       "Customizations focus on the handoff from CRM to sales and invoicing, with tailored invoice output and order-sequence handling.",
+    contributions: [
+      "Customized the handoff from CRM opportunities into sales orders.",
+      "Handled sales-order sequence requirements for the distribution workflow.",
+      "Tailored invoice reports for the business's accounting process.",
+    ],
+    outcome:
+      "Customer, sales, and invoice workflows are better aligned for the oil distribution business.",
   },
   {
     slug: "sms-integration-suite",
     title: "SMS integration suite",
+    role: "Odoo SMS integration development",
     category: "Integrations",
     group: "integrations",
     version: "Odoo 17",
+    edition: "Not specified",
+    technologies: ["Python", "XML", "SMS provider API", "Webhooks"],
     description:
       "Connected SMS messaging to everyday Odoo work across sales, invoices, CRM, HR, POS, purchasing, and delivery flows.",
     features: ["Sales & invoices", "POS & CRM", "HR & inventory"],
@@ -56,6 +75,13 @@ export const projects: Project[] = [
       "Teams needed messaging to be available across multiple Odoo apps instead of being isolated in a single workflow.",
     approach:
       "The integration suite connects SMS capabilities to sales, invoicing, CRM, HR, POS, purchasing, and delivery operations.",
+    contributions: [
+      "Connected provider settings, reusable templates, and contacts to Odoo messaging.",
+      "Added message workflows around sales, invoices, and CRM activities.",
+      "Extended messaging into HR, POS, purchasing, and delivery operations.",
+    ],
+    outcome:
+      "A shared SMS capability is available across more of the team's everyday Odoo workflows.",
     modules: [
       {
         name: "SMS provider, templates & contacts",
@@ -111,9 +137,12 @@ export const projects: Project[] = [
   {
     slug: "gst-return-preparation",
     title: "GST return preparation",
+    role: "GST reporting workflow development",
     category: "Finance & reporting",
     group: "operations",
     version: "Odoo 17",
+    edition: "Not specified",
+    technologies: ["Python", "XML / QWeb", "GST API", "JSON", "Excel"],
     description:
       "Built a monthly and quarterly GST return workflow, organizing invoice data into GSTR-1 sections with downloadable JSON and Excel reports.",
     features: ["GSTR-1 sections", "JSON & Excel", "Return periods"],
@@ -124,6 +153,13 @@ export const projects: Project[] = [
       "Preparing a return involves organizing invoice information by reporting period and the relevant GSTR-1 sections.",
     approach:
       "The workflow supports monthly and quarterly periods and produces downloadable JSON and Excel outputs from the organized return data.",
+    contributions: [
+      "Organized accounting data into GSTR-1 reporting sections by return period.",
+      "Supported monthly and quarterly return preparation.",
+      "Added downloadable JSON and Excel outputs, along with selected API and filing-status interactions.",
+    ],
+    outcome:
+      "Return data can be prepared in a structured GSTR-1 workflow and exported for further use.",
     modules: [
       {
         name: "GST return periods & GSTR-1",
@@ -157,9 +193,12 @@ export const projects: Project[] = [
   {
     slug: "clinical-encounters-prescriptions",
     title: "Clinical encounters & prescriptions",
+    role: "Clinical workflow development",
     category: "Healthcare",
     group: "industry",
     version: "Odoo 17",
+    edition: "Not specified",
+    technologies: ["Python", "XML / QWeb", "PostgreSQL"],
     description:
       "Developed hospital workflows for patients, doctors, appointments, OPD visits, follow-ups, diagnoses, medicines, and prescriptions.",
     features: ["Patient visits", "Appointments", "Prescriptions"],
@@ -170,6 +209,13 @@ export const projects: Project[] = [
       "Clinical teams need patient appointments and encounter records to connect with follow-up care and the treatment information recorded during a visit.",
     approach:
       "The work links patient and doctor records with OPD visits, follow-ups, diagnoses, medicines, and prescriptions.",
+    contributions: [
+      "Connected patient and doctor records with appointment scheduling.",
+      "Added OPD visit notes and follow-up records to the patient workflow.",
+      "Linked diagnoses, medicines, and prescriptions with encounter information.",
+    ],
+    outcome:
+      "Appointments, follow-ups, and prescription details are brought together in a patient-care workflow.",
     modules: [
       {
         name: "Patient records & appointment scheduling",
@@ -203,19 +249,33 @@ export const projects: Project[] = [
   {
     slug: "openeducat-enhancements",
     title: "OpenEduCat enhancements",
+    role: "Odoo Developer – Customization & Enhancement",
     category: "Education",
+    detailCategory: "Education ERP · Odoo Customization",
     group: "industry",
-    version: "Odoo 17",
+    version: "Odoo 16 & 17",
+    edition: "Community Edition",
+    technologies: ["Python", "Odoo ORM", "XML", "PostgreSQL", "QWeb"],
     description:
-      "Extended education workflows around student admissions, fee structures and payments, exam configuration, marksheets, and alumni records.",
+      "Customized and enhanced the OpenEduCat education management system to support student admissions, academic operations, fee management, examinations, marksheets, and alumni workflows.",
     features: ["Admissions & fees", "Exams & marksheets", "Alumni"],
     visual: "education",
     artTitle: "Student journey",
     artLabel: "EDUCATION ERP",
     context:
-      "The education work spans student onboarding, fee management, exams, and alumni records across related school and student workflows.",
+      "Education management required flexible workflows for handling student records, admission processes, fee structures, examination activities, and academic documentation.",
     approach:
-      "Enhancements cover admission records, fee structures and payments, exam configuration, marksheets, and alumni information.",
+      "Customized OpenEduCat modules to support student admissions, academic operations, fee management, examinations, marksheets, and alumni workflows.",
+    contributions: [
+      "Customized existing OpenEduCat modules based on business requirements.",
+      "Enhanced student admission and onboarding workflows.",
+      "Customized fee structures, payment management, and student documents.",
+      "Extended examination configuration and marksheet functionality.",
+      "Implemented alumni and leaving certificate customizations.",
+      "Enhanced payment registers with banking and cheque-related information.",
+    ],
+    outcome:
+      "Delivered customized education workflows with improved student record management, fee processing, examination handling, and academic documentation.",
     modules: [
       {
         name: "Education core & student lifecycle",
@@ -331,9 +391,12 @@ export const projects: Project[] = [
   {
     slug: "rental-multi-instance-configuration",
     title: "Rental & multi-instance configuration",
+    role: "Odoo instance configuration",
     category: "ERP workflows",
     group: "operations",
     version: "Odoo",
+    edition: "Not specified",
+    technologies: ["Python", "XML", "PostgreSQL"],
     description:
       "Built configuration tools to connect Odoo instances, synchronize sequences and scheduled jobs, and manage WhatsApp settings.",
     features: ["Instance setup", "Sequence sync", "Scheduled jobs"],
@@ -344,6 +407,13 @@ export const projects: Project[] = [
       "This configuration work supports coordinating selected settings and scheduled operations between connected Odoo instances.",
     approach:
       "The tools cover instance setup, sequence and scheduled-job synchronization, and WhatsApp configuration. The project is about instance configuration, not rental pricing workflows.",
+    contributions: [
+      "Configured connection details for a remote Odoo instance.",
+      "Added sequence synchronization and updates for prefixes and next numbers.",
+      "Supported scheduled-job synchronization and WhatsApp server settings.",
+    ],
+    outcome:
+      "Administrators can coordinate selected configuration and scheduled operations between Odoo instances; this is not a rental-order workflow.",
     modules: [
       {
         name: "Remote Odoo instance configuration",
@@ -366,9 +436,12 @@ export const projects: Project[] = [
   {
     slug: "community-sabha-management",
     title: "Community & Sabha management",
+    role: "Community workflow development",
     category: "Community",
     group: "industry",
     version: "Odoo 17",
+    edition: "Not specified",
+    technologies: ["Python", "XML", "OWL"],
     description:
       "Created community meeting records with regional zones, location details, participant lists, and invited-versus-present attendance counts.",
     features: ["Meetings & zones", "Participant lists", "Attendance"],
@@ -379,6 +452,13 @@ export const projects: Project[] = [
       "Community organizers need to record gatherings alongside where they take place, who is invited, and who attends.",
     approach:
       "The module organizes meetings, zones and locations, participant lists, and attendance counts for invited and present members.",
+    contributions: [
+      "Recorded Sabha meetings with dates, speakers, zones, and location details.",
+      "Managed participant lists and invited-versus-present attendance counts.",
+      "Extended partner records with Sabha and location-related information.",
+    ],
+    outcome:
+      "Meeting, location, participant, and attendance information is organized in one community workflow.",
     modules: [
       {
         name: "Sabha & attendee management",
@@ -411,9 +491,12 @@ export const projects: Project[] = [
   {
     slug: "crm-helpdesk-warranty-workflows",
     title: "CRM, helpdesk & warranty workflows",
+    role: "CRM and service workflow customization",
     category: "ERP workflows",
     group: "operations",
     version: "Odoo 18",
+    edition: "Not specified",
+    technologies: ["Python", "XML / QWeb", "PostgreSQL"],
     description:
       "Customized CRM quotation and feasibility flows alongside helpdesk ticket handling, warranty claims, and inter-company stock transfers.",
     features: ["CRM quotations", "Support & warranty", "Stock transfers"],
@@ -424,6 +507,13 @@ export const projects: Project[] = [
       "The work spans the customer journey from quotation and feasibility through support, warranty handling, and related stock movement.",
     approach:
       "Custom modules connect CRM quotation flows with helpdesk tickets, AMC and vendor warranty claims, and inter-company stock transfers.",
+    contributions: [
+      "Customized CRM quotation and feasibility steps.",
+      "Worked with customer and vendor warranty-claim workflows.",
+      "Covered helpdesk and inter-company stock-transfer workflows included in the wider delivery bundle.",
+    ],
+    outcome:
+      "The documented scope connects quotation, support, warranty, and stock movement, with authorship varying across bundled components.",
     modules: [
       {
         name: "Customer AMC warranty claims",
@@ -489,9 +579,12 @@ export const projects: Project[] = [
   {
     slug: "dental-clinic-management",
     title: "Dental clinic management",
+    role: "Dental clinic workflow contribution",
     category: "Healthcare",
     group: "industry",
     version: "Odoo 18",
+    edition: "Not specified",
+    technologies: ["Python", "XML / QWeb", "Website portal"],
     description:
       "Worked on clinic workflows for appointments, doctors, treatments, prescriptions, patient questionnaires, and insurance details.",
     features: ["Appointments", "Treatment plans", "Patient records"],
@@ -502,6 +595,13 @@ export const projects: Project[] = [
       "Clinic records need to bring appointments and practitioner details together with treatment and patient information.",
     approach:
       "The work covers appointment and doctor records, treatments and prescriptions, patient questionnaires, and insurance details.",
+    contributions: [
+      "Worked across doctor schedules and patient appointment workflows.",
+      "Connected treatment and prescription records with invoicing.",
+      "Included patient questionnaires, insurance details, and related clinical reports.",
+    ],
+    outcome:
+      "Appointments, practitioner information, and care records are brought together in a clinic workflow.",
     modules: [
       {
         name: "Dental appointments & practitioner schedules",
@@ -544,9 +644,12 @@ export const projects: Project[] = [
   {
     slug: "hr-payroll-compliance",
     title: "HR, payroll & compliance",
+    role: "HR and payroll workflow contribution",
     category: "ERP workflows",
     group: "operations",
     version: "Odoo 18",
+    edition: "Not specified",
+    technologies: ["Python", "XML / QWeb", "PostgreSQL"],
     description:
       "Extended attendance and payroll flows with overtime/weekend handling, monthly absent-leave automation, India e-waybill extensions, and operational payroll reports.",
     features: ["Attendance & payroll", "E-waybill", "Payroll reports"],
@@ -557,6 +660,13 @@ export const projects: Project[] = [
       "HR and payroll operations involve employee attendance and reporting, along with related compliance and document tracking.",
     approach:
       "The customizations extend attendance, automate absent-leave entries, add India e-waybill and invoice fields, and support payroll reporting.",
+    contributions: [
+      "Extended attendance handling for overtime and weekend cases.",
+      "Automated monthly absent-leave entries and supported payroll reports.",
+      "Added India e-waybill and related invoice and partner fields.",
+    ],
+    outcome:
+      "Attendance, payroll reporting, and India-specific e-waybill information are covered by connected Odoo workflows.",
     modules: [
       {
         name: "Attendance, overtime & leave automation",
@@ -598,11 +708,14 @@ export const projects: Project[] = [
     ],
   },
   {
-    slug: "production-challan-print-tracking",
-    title: "Production challan & print tracking",
+    slug: "challan-print-tracking",
+    title: "challan & print tracking",
+    role: "Odoo development",
     category: "Manufacturing",
     group: "industry",
     version: "Odoo 19",
+    edition: "Not specified",
+    technologies: ["Python", "XML / QWeb", "PostgreSQL"],
     description:
       "Developed challan workflows to assign jobs to machines and people, track UV and thermal print stages, record quantities, and link finished work to invoicing.",
     features: ["Job assignment", "Machine tracking", "Invoice linkage"],
@@ -613,6 +726,13 @@ export const projects: Project[] = [
       "Print production needs a way to follow work assignments, machine stages, and quantities through to completed jobs.",
     approach:
       "The challan flow tracks assignments to people and machines, UV and thermal printing stages, quantities, and links to invoicing.",
+    contributions: [
+      "Tracked challan progress from confirmation through assignment, processing, and completion.",
+      "Recorded job assignments, machines, print stages, and production quantities.",
+      "Linked completed challan work with invoicing.",
+    ],
+    outcome:
+      "Production assignments, print stages, quantities, and invoicing are visible in a connected challan workflow.",
     modules: [
       {
         name: "Production challan lifecycle",
@@ -667,9 +787,12 @@ export const projects: Project[] = [
   {
     slug: "employee-self-service-finance",
     title: "Employee self-service & finance",
+    role: "Employee portal and finance workflow contribution",
     category: "ERP workflows",
     group: "operations",
     version: "Odoo 19",
+    edition: "Not specified",
+    technologies: ["Python", "XML / QWeb", "PostgreSQL"],
     description:
       "Built employee portal flows for attendance, expenses, and salary advances, alongside daily cashbook and business reporting customizations.",
     features: ["Employee portal", "Salary advances", "Daily cashbook"],
@@ -680,6 +803,13 @@ export const projects: Project[] = [
       "Employees need straightforward access to common HR requests, while finance teams need visibility into daily cash activity.",
     approach:
       "Portal flows cover attendance, expenses, and salary advances, complemented by daily cashbook and business-report customizations.",
+    contributions: [
+      "Added portal access for attendance activity and employee expense requests.",
+      "Supported salary-advance requests and their payroll-related handling.",
+      "Worked across daily cashbook and business reporting workflows.",
+    ],
+    outcome:
+      "Employee self-service and finance operations are covered together, with contributions and authorship varying across the supplied packages.",
     modules: [
       {
         name: "Employee attendance & expense portal",
@@ -755,9 +885,12 @@ export const projects: Project[] = [
   {
     slug: "odoo-mcp-server",
     title: "Odoo MCP server",
+    role: "Odoo MCP integration contribution",
     category: "AI & integrations",
     group: "integrations",
     version: "Odoo 19",
+    edition: "Not specified",
+    technologies: ["Python", "Model Context Protocol", "OAuth", "API keys"],
     description:
       "Worked on an MCP interface for connecting compatible AI clients to Odoo tools, with scoped access, API keys, OAuth, and audit history.",
     features: ["MCP tools", "Access controls", "Audit history"],
@@ -768,6 +901,13 @@ export const projects: Project[] = [
       "The integration provides a structured way for compatible MCP clients to interact with selected Odoo capabilities.",
     approach:
       "The project includes MCP tools and access-management features such as API keys, OAuth, scoped access, and audit history.",
+    contributions: [
+      "Worked on an MCP interface for configured Odoo tools and resources.",
+      "Included API-key and OAuth access controls with scope and request restrictions.",
+      "Added audit history and dashboard tools for reviewing integration activity.",
+    ],
+    outcome:
+      "Compatible MCP clients can access selected Odoo capabilities through a controlled interface, subject to runtime configuration and user permissions.",
     modules: [
       {
         name: "MCP protocol endpoint",
@@ -811,9 +951,12 @@ export const projects: Project[] = [
   {
     slug: "pos-cash-movement-shortcuts",
     title: "POS cash movement shortcuts",
+    role: "Point-of-sale workflow customization",
     category: "Point of sale",
     group: "operations",
     version: "Odoo 19",
+    edition: "Not specified",
+    technologies: ["Python", "JavaScript", "OWL", "XML / QWeb"],
     description:
       "Added cashier-facing cash-in and cash-out shortcuts to the Point of Sale, with visibility respecting cashier access.",
     features: ["Cash in / out", "POS navigation", "Role-aware UI"],
@@ -824,6 +967,13 @@ export const projects: Project[] = [
       "Cashiers need quick access to cash-in and cash-out actions from within the point-of-sale experience.",
     approach:
       "The customization adds navigation shortcuts for both cash movements and keeps their visibility aligned with cashier access.",
+    contributions: [
+      "Added cash-in and cash-out shortcuts to POS navigation.",
+      "Used Odoo's existing cash-movement flow rather than creating a separate cash engine.",
+      "Aligned shortcut visibility with cashier access.",
+    ],
+    outcome:
+      "Cashiers can reach existing cash-movement actions directly from the POS interface.",
     modules: [
       {
         name: "POS cash-movement shortcuts",
@@ -845,9 +995,12 @@ export const projects: Project[] = [
   {
     slug: "salesperson-commissions",
     title: "Salesperson commissions",
+    role: "Commission workflow development",
     category: "Finance & reporting",
     group: "operations",
     version: "Odoo 19",
+    edition: "Not specified",
+    technologies: ["Python", "XML / QWeb", "PostgreSQL"],
     description:
       "Implemented commission records linked to sales orders, with salesperson assignment, approval status, payment dates, and references.",
     features: ["Commission rules", "Settlement payment", "Status tracking"],
@@ -858,6 +1011,13 @@ export const projects: Project[] = [
       "Commission calculations need to follow salesperson rules on confirmed sales while keeping settlement visible to finance.",
     approach:
       "The module supports fixed or percentage rules and period-based settlement; eligible records are paid through an outbound accounting payment.",
+    contributions: [
+      "Supported fixed-amount and percentage-based commission rules.",
+      "Linked commission records to sales orders and assigned salespeople.",
+      "Added period-based settlement through outbound accounting payments.",
+    ],
+    outcome:
+      "Sales commissions are linked to confirmed sales and can be settled through an accounting payment workflow.",
     modules: [
       {
         name: "Product & salesperson commission rules",
@@ -891,9 +1051,12 @@ export const projects: Project[] = [
   {
     slug: "shopify-odoo-integration",
     title: "Shopify ↔ Odoo integration",
+    role: "Shopify–Odoo connector contribution",
     category: "Integrations",
     group: "integrations",
     version: "Odoo 19",
+    edition: "Not specified",
+    technologies: ["Python", "GraphQL Admin API", "OAuth", "Webhooks"],
     description:
       "Contributed to connector work for GraphQL-based commerce sync across orders, products, inventory, refunds, returns, payouts, and webhook jobs.",
     features: ["Orders & catalog", "Inventory & refunds", "Sync jobs"],
@@ -904,6 +1067,13 @@ export const projects: Project[] = [
       "Commerce operations require Shopify and Odoo to exchange information across sales, catalog, stock, and post-order activity.",
     approach:
       "Contributions covered GraphQL-based synchronization for orders, products, inventory, refunds, returns, payouts, and webhook jobs.",
+    contributions: [
+      "Contributed to GraphQL-based store connection and webhook workflows.",
+      "Worked across order, catalog, inventory, fulfillment, refund, and return synchronization.",
+      "Covered payout-related information and queued synchronization jobs.",
+    ],
+    outcome:
+      "The connector work spans core commerce and post-order synchronization between Shopify and Odoo; the bundled packages overlap and are not assumed to be installed together.",
     modules: [
       {
         name: "Store connection, OAuth & webhooks",
@@ -958,9 +1128,12 @@ export const projects: Project[] = [
   {
     slug: "hospital-operations-billing",
     title: "Hospital operations & billing",
+    role: "Hospital workflow contribution",
     category: "Healthcare",
     group: "industry",
     version: "Odoo",
+    edition: "Not specified",
+    technologies: ["Python", "XML / QWeb", "Website portal"],
     description:
       "Worked across hospital records for patients, physicians, departments, appointments, treatments, prescriptions, medications, and billing.",
     features: ["Patient & physician", "Appointments", "Prescriptions & billing"],
@@ -971,6 +1144,13 @@ export const projects: Project[] = [
       "Hospital teams maintain linked records for patients, physicians, departments, appointments, care, and related billing.",
     approach:
       "The work covers patient and physician records, departments, appointments, treatments, prescriptions, medications, and billing.",
+    contributions: [
+      "Worked across patient, physician, and department records.",
+      "Covered appointment scheduling and website or portal appointment requests.",
+      "Connected treatment and prescription information with sales and accounting workflows.",
+    ],
+    outcome:
+      "The supplied hospital workflows connect patient records, appointments, care, and billing; this describes work with the provided module, not sole authorship.",
     modules: [
       {
         name: "Patient, physician & department records",

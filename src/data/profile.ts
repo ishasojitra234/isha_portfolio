@@ -17,6 +17,45 @@ export const skills = [
   },
 ];
 
+export const expertiseSkills = [
+  {
+    title: "Odoo & ERP",
+    items: [
+      "Customize Odoo workflows and modules",
+      "Odoo 14–19 · Community & Enterprise",
+      "APIs · automation · migrations",
+      "Standard setup or custom development",
+    ],
+  },
+  {
+    title: "Backend Engineering",
+    items: [
+      "Build Odoo logic and integrations",
+      "Python · Odoo ORM",
+      "REST APIs · webhooks · PostgreSQL",
+      "Git · Docker",
+    ],
+  },
+  {
+    title: "Data & Reporting",
+    items: [
+      "Turn business data into useful reports",
+      "QWeb · PDF · Excel",
+      "Dashboards · data imports",
+      "ORM · testing · validation",
+    ],
+  },
+  {
+    title: "Web & Developer Tools",
+    items: [
+      "Build modern web experiences",
+      "JavaScript · OWL · XML",
+      "React · Next.js · Git",
+      "GitLab · Docker · Postman · CI/CD",
+    ],
+  },
+] as const;
+
 export const experience = [
   {
     period: "Jun 2026 — Now",

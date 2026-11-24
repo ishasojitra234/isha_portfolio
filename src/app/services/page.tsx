@@ -8,7 +8,7 @@ import { services } from "../../data/services";
 
 export const metadata: Metadata = {
   title: "Services | Isha Sojitra",
-  description: "Odoo ERP development, website and portal work, and e-commerce integrations.",
+  description: "Odoo development, responsive websites, and e-commerce integration services.",
 };
 
 export default function ServicesPage() {
@@ -32,8 +32,8 @@ export default function ServicesPage() {
               <span className="service-category">{service.number} / {service.category}</span>
               <h2>{service.title}</h2>
               <p>{service.description}</p>
-              <ul>{service.details.map((detail) => <li key={detail}>{detail}</li>)}</ul>
-              <Link href="/contact">Explore this service <ArrowUpRight size={14} /></Link>
+              <ul>{service.highlights.map((highlight) => <li key={highlight}>{highlight}</li>)}</ul>
+              <Link href={`/services/${service.slug}`}>Explore this service <ArrowUpRight size={14} /></Link>
             </PageReveal>
           ))}
         </section>

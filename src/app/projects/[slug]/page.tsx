@@ -39,8 +39,6 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
     <ProjectDetails
       project={orderedProjects[projectIndex]}
       projectNumber={(projectIndex + 1).toString().padStart(2, "0")}
-      previousProject={orderedProjects[projectIndex - 1]}
-      nextProject={orderedProjects[projectIndex + 1]}
     />
   );
 }

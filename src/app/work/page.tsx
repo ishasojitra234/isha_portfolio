@@ -21,7 +21,7 @@ export default function WorkPage() {
             <h1>Real workflows,<br /><span>thoughtfully improved.</span></h1>
             <p>
               A closer look at Odoo systems, integrations, and industry-specific workflows I&apos;ve helped shape.
-              Select a case study to explore the modules and functionality.
+              Select a case study to explore the challenge, contribution, and outcome.
             </p>
           </PageReveal>
         </section>
