@@ -33,6 +33,7 @@ const projectIcons: Record<string, LucideIcon> = {
   challan: Factory,
   employee: UsersRound,
   mcp: Network,
+  network: Network,
   pos: ShoppingBag,
   commission: BadgePercent,
   shopify: ShoppingBag,

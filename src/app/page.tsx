@@ -23,7 +23,7 @@ import PageReveal from "../components/PageReveal";
 import ProjectArtwork from "../components/ProjectArtwork";
 import SiteFooter from "../components/SiteFooter";
 import SiteHeader from "../components/SiteHeader";
-import { orderedProjects, projects } from "../data/projects";
+import { projects, workProjects } from "../data/projects";
 import { experience, skills } from "../data/profile";
 import { services } from "../data/services";
 
@@ -40,7 +40,7 @@ const approach = [
   "Refine the result with practical feedback and support.",
 ];
 
-const featuredProjects = orderedProjects.slice(0, 6);
+const featuredProjects = workProjects.slice(0, 6);
 
 const technologies = [
   { name: "Odoo", icon: siOdoo },

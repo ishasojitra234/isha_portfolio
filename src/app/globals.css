@@ -111,8 +111,9 @@ button { font: inherit; }
 .project-filter span { color: #a18d8b; font-family: var(--mono); font-size: 11px; }
 .project-filter:hover, .project-filter.active { border-color: var(--wine); background: var(--wine); color: #fffaf5; }
 .project-filter:hover span, .project-filter.active span { color: #e4c6c6; }
-.project-list { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
-.project-card { display: flex; min-width: 0; flex-direction: column; overflow: hidden; border: 1px solid rgba(74, 27, 43, .12); border-radius: 5px; background: rgba(255, 254, 251, .8); transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease; }
+.project-list { display: grid; grid-auto-rows: 1fr; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+.project-list > .reveal { display: flex; min-width: 0; }
+.project-card { display: flex; min-width: 0; flex: 1; flex-direction: column; overflow: hidden; border: 1px solid rgba(74, 27, 43, .12); border-radius: 5px; background: rgba(255, 254, 251, .8); transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease; }
 .project-card:hover { transform: translateY(-4px); border-color: rgba(74, 27, 43, .24); box-shadow: 0 15px 35px rgba(58, 30, 36, .09); }
 .project-art { --art-accent: #8c5861; --art-wash: #eee6e2; position: relative; display: grid; aspect-ratio: 1.58 / 1; min-height: 174px; place-items: center; overflow: hidden; background: radial-gradient(ellipse at 50% 20%, #fffdfa 0, var(--art-wash) 82%); isolation: isolate; }
 .project-art::before { position: absolute; top: -60%; right: -14%; width: 78%; aspect-ratio: 1; border: 1px solid color-mix(in srgb, var(--art-accent) 18%, transparent); border-radius: 50%; content: ""; }
@@ -150,9 +151,9 @@ button { font: inherit; }
 .project-copy { display: flex; flex: 1; flex-direction: column; align-items: flex-start; padding: 17px 17px 15px; }
 .project-meta { display: flex; width: 100%; align-items: center; justify-content: space-between; gap: 8px; color: #927d7b; font-family: var(--mono); font-size: 10px; letter-spacing: .03em; text-transform: uppercase; }
 .project-meta span:last-child { color: var(--rose); white-space: nowrap; }
-.project-copy h3 { margin: 12px 0 8px; color: var(--wine); font-family: var(--serif); font-size: 20px; font-weight: 500; letter-spacing: -.025em; line-height: 1.2; }
+.project-copy h3 { min-height: 2.4em; margin: 12px 0 8px; color: var(--wine); font-family: var(--serif); font-size: 20px; font-weight: 500; letter-spacing: -.025em; line-height: 1.2; }
 .project-copy > p { margin: 0; color: var(--muted); font-size: 14px; line-height: 1.7; }
-.project-tags { display: flex; flex-wrap: wrap; gap: 5px; margin-top: auto; padding-top: 14px; }
+.project-tags { display: flex; min-height: 69px; flex-wrap: wrap; gap: 5px; margin-top: auto; padding-top: 14px; }
 .tag { display: inline-flex; min-height: 25px; align-items: center; padding: 0 8px; border: 1px solid #e8dfdc; border-radius: 2px; color: #78686a; font-family: var(--mono); font-size: 10px; letter-spacing: .01em; }
 .tag-row { display: flex; flex-wrap: wrap; gap: 6px; margin-top: auto; padding-top: 17px; }
 
@@ -283,6 +284,7 @@ button { font: inherit; }
   .hero-art { min-height: 315px; }
   .skills-grid { grid-template-columns: 1fr; }
   .skill-card { min-height: 138px; }
+  .project-tags { min-height: 99px; }
 }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
@@ -439,6 +441,24 @@ button { font: inherit; }
 .contact-page-links > a:hover { padding-inline: 4px; }
 .contact-page-links > a > span { color: #827475; }
 .contact-page-links strong { display: inline-flex; align-items: center; gap: 5px; color: var(--wine); font-size: 13px; font-weight: 600; text-align: right; }
+.contact-location {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 22px 0;
+  border-bottom: 1px solid #ded8d4;
+}
+
+.contact-location span {
+  color: #918782;
+  font-size: 14px;
+}
+
+.contact-location strong {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
 .contact-page-availability { display: flex; flex-wrap: wrap; gap: 9px 16px; margin-top: 19px; color: #847577; font-family: var(--mono); font-size: 11px; }
 .contact-page-availability span { display: inline-flex; align-items: center; gap: 6px; }
 .contact-page-availability svg { color: var(--rose); }

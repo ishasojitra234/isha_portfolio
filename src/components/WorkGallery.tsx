@@ -5,7 +5,7 @@ import Link from "next/link";
 import { useState } from "react";
 import PageReveal from "./PageReveal";
 import ProjectArtwork from "./ProjectArtwork";
-import { orderedProjects, projects } from "../data/projects";
+import { workProjects } from "../data/projects";
 
 const filters = [
   { label: "All projects", value: "all" },
@@ -19,23 +19,27 @@ type ProjectFilter = (typeof filters)[number]["value"];
 export default function WorkGallery() {
   const [filter, setFilter] = useState<ProjectFilter>("all");
   const visibleProjects = filter === "all"
-    ? orderedProjects
-    : orderedProjects.filter((project) => project.group === filter);
+    ? workProjects
+    : workProjects.filter((project) => project.group === filter);
+  const orderedProjectCounts = (itemValue: ProjectFilter) =>
+    itemValue === "all"
+      ? workProjects.length
+      : workProjects.filter((project) => project.group === itemValue).length;
 
   return (
     <>
-      <div className="project-filters" role="group" aria-label="Filter projects">
+      <div className="project-filters" role="tablist" aria-label="Filter projects">
         {filters.map((item) => {
-          const count = item.value === "all"
-            ? projects.length
-            : projects.filter((project) => project.group === item.value).length;
+          const count = orderedProjectCounts(item.value);
 
           return (
             <button
               className={filter === item.value ? "project-filter active" : "project-filter"}
               type="button"
               key={item.value}
-              aria-pressed={filter === item.value}
+              role="tab"
+              aria-selected={filter === item.value}
+              aria-controls="project-list"
               onClick={() => setFilter(item.value)}
             >
               {item.label}<span>{count.toString().padStart(2, "0")}</span>
@@ -43,9 +47,9 @@ export default function WorkGallery() {
           );
         })}
       </div>
-      <div className="project-list" aria-live="polite">
+      <div className="project-list" id="project-list" aria-live="polite">
         {visibleProjects.map((project, index) => {
-          const number = (orderedProjects.indexOf(project) + 1).toString().padStart(2, "0");
+          const number = (workProjects.indexOf(project) + 1).toString().padStart(2, "0");
 
           return (
             <PageReveal key={project.slug} delay={(index % 3) * 0.06}>

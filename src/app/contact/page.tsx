@@ -38,8 +38,13 @@ export default function ContactPage() {
               <a href="mailto:ishasojitra234@gmail.com"><span>Email</span><strong>ishasojitra234@gmail.com <ArrowUpRight size={13} /></strong></a>
               <a href="https://wa.me/919016186445" target="_blank" rel="noreferrer"><span>WhatsApp</span><strong>Message me on WhatsApp <ArrowUpRight size={13} /></strong></a>
               <a href="https://www.linkedin.com/in/isha-sojitra-76a946341" target="_blank" rel="noreferrer"><span>LinkedIn</span><strong>Connect with Isha <ArrowUpRight size={13} /></strong></a>
-              <a href="tel:+919016186445"><span>Based in</span><strong>Surat, India <MapPin size={13} /></strong></a>
-            </div>
+              <div className="contact-location">
+                <span>Based in</span>
+                <strong>
+                  Surat, India <MapPin size={13} />
+                </strong>
+              </div>
+              </div>
             {/* <div className="contact-availability">
               <span><Mail size={14} /> ishasojitra234@gmail.com</span>
               <span><Phone size={14} /> +91 90161 86445</span>
