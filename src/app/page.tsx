@@ -158,7 +158,7 @@ export default function Home() {
             </PageReveal>
             <div className="home-stat-grid">
               <PageReveal className="home-stat"><strong>2+</strong><span>years in software and Odoo work</span></PageReveal>
-              <PageReveal className="home-stat" delay={0.05}><strong>{projects.length}</strong><span>project case studies</span></PageReveal>
+              <PageReveal className="home-stat" delay={0.05}><strong>16</strong><span>project case studies</span></PageReveal>
               <PageReveal className="home-stat" delay={0.1}><strong>14 – 19</strong><span>Odoo versions in project work</span></PageReveal>
               {/* <PageReveal className="home-stat" delay={0.15}><strong>{skills.length}</strong><span>areas of technical focus</span></PageReveal> */}
             </div>
@@ -172,7 +172,7 @@ export default function Home() {
               <div className="eyebrow"><span className="eyebrow-line" /> SELECTED WORK</div>
               <h2>Different challenges.<br /><span>Connected thinking.</span></h2>
             </div>
-            <Link className="small-arrow-link" href="/work">View all {projects.length} projects <ArrowUpRight size={13} /></Link>
+            <Link className="small-arrow-link" href="/work">View all 16 projects <ArrowUpRight size={13} /></Link>
           </PageReveal>
           <div className="home-project-grid">
             {featuredProjects.map((project, index) => {
